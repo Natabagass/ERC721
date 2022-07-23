@@ -13,10 +13,6 @@ contract NFT is ERC721, ERC721URIStorage {
 
     constructor() ERC721("SuperNFT", "SNFT") {}
 
-    function initialize(uint _val) external {
-        val = _val;
-    }
-
     function _baseURI() internal pure override returns (string memory) {
         return "https://raw.githubusercontent.com/Natabagass/ERC721/main/item/metadata.json";
     }

@@ -1,5 +1,6 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
+const { int } = require("hardhat/internal/core/params/argumentTypes");
 
 // var NFT = artifacts.require("NFT");
 
@@ -26,32 +27,10 @@ describe("NFT", () => {
         expect(erc721Symbol).to.equal(expectedValue);
     })
 
-    it ("Value = value"), async () => {
-        const expectedValue = _val;
-        const _val = await nft.intialize();
+    it(' should be able to deploy and mint ERC721 token', async () => {
+        await nft.mintNFT(address, tokenID)
 
-        expect(_val).to.equal(expectedValue);
-    }
-
-    it ("URI"), async () => {
-        const expectedValue = "https://raw.githubusercontent.com/2pai/nft-erc721/main/item/";
-        const tokenURI = await nft._baseURI();
-
-        expect(tokenURI).to.equal(expectedValue);
-    }
-
-    it ("burn"), async () => {
-        const expectedValue = tokenID;
-        const burnable = await nft._burn();
-
-        expect(burnable).to.equal(expectedValue);
-    }
-
-    // it(' should be able to deploy and mint ERC721 token', async () => {
-    //     nft = await NFT.new(nft.name(), nft.symbol())
-    //     await nft.mintUniqueTokenTo(account, tokenId, tokenUri, {from: accounts[0]})
-
-    //     expect(await nft.symbol()).to.equal(nft.symbol())
-    //     expect(await nft.name()).to.equal(nft.name())
-    // })
+        expect(await nft.symbol()).to.equal(nft.symbol())
+        expect(await nft.name()).to.equal(nft.name())
+    })
 })
