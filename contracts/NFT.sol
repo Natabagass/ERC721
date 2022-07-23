@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.10;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
@@ -18,7 +18,7 @@ contract NFT is ERC721, ERC721URIStorage {
     }
 
     function _baseURI() internal pure override returns (string memory) {
-        return "https://raw.githubusercontent.com/2pai/nft-erc721/main/item/";
+        return "https://raw.githubusercontent.com/Natabagass/ERC721/main/item/metadata.json";
     }
 
     function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
