@@ -7,8 +7,8 @@ module.exports = {
     solidity: "0.8.10",
     networks: {
         goerli: {
-            url:`https://eth-goerli.alchemyapi.io/v2/SjDPi-6ydxeo8XlnPMxhVnTImAYCCuMn`,
-            accounts: [`1919c97f199cd6ad7dad1c1e6b8f1378c1d070f9ee629ebc7757f76f752b6a78`],
+            url:`https://eth-goerli.alchemyapi.io/v2/{`process.env.ALCHEMY_API_KEY`}`,
+            accounts: [`process.env.PRI_KEY`],
         },
     },
     etherscan: {
